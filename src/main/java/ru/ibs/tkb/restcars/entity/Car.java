@@ -18,4 +18,5 @@ public class Car {
     @GeneratedValue
     private Long id;
     private String mnfName;
+    private String modelName;
 }
