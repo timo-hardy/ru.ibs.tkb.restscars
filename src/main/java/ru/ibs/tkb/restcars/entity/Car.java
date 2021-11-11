@@ -21,4 +21,9 @@ public class Car {
     private String mnfName;
     @Column(name = "MODEL")
     private String modelName;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    Engine engine;
+    @OneToOne(cascade = CascadeType.ALL)
+    SteringWheel steringWheel;
 }
