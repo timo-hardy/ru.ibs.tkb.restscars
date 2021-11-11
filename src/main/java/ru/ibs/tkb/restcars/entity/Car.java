@@ -15,11 +15,8 @@ import javax.persistence.*;
 public class Car {
     @Id
     @GeneratedValue
-    @Column(name = "ID")
     private Long id;
-    @Column(name = "MANUFACTURE")
     private String mnfName;
-    @Column(name = "MODEL")
     private String modelName;
 
     @OneToOne(cascade = CascadeType.ALL)
