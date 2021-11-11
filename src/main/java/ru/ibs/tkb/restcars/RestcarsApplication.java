@@ -1,0 +1,13 @@
+package ru.ibs.tkb.restcars;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RestcarsApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(RestcarsApplication.class, args);
+    }
+
+}
