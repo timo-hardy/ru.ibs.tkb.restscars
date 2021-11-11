@@ -22,5 +22,5 @@ public class Car {
     @OneToOne(cascade = CascadeType.ALL)
     Engine engine;
     @OneToOne(cascade = CascadeType.ALL)
-    SteringWheel steringWheel;
+    SteeringWheel steeringWheel;
 }
