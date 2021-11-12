@@ -6,6 +6,7 @@ import ru.ibs.tkb.restcars.entity.Car;
 import ru.ibs.tkb.restcars.repository.CarRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -30,5 +31,4 @@ public class CarServiceImpl implements CarService {
     public void delete(long id) {
         carRepository.deleteById(id);
     }
-
 }
