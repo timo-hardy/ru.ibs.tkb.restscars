@@ -8,7 +8,7 @@ import ru.ibs.tkb.restcars.repository.SteeringWheelRepository;
 import java.util.List;
 
 @Service
-public class SteeringWheelServiceImpl {
+public class SteeringWheelServiceImpl implements SteeringWheelService {
     private final SteeringWheelRepository steeringWheelRepository;
 
     @Autowired
@@ -16,14 +16,17 @@ public class SteeringWheelServiceImpl {
         this.steeringWheelRepository = steeringWheelRepository;
     }
 
+    @Override
     public List<SteeringWheel> findAll() {
         return steeringWheelRepository.findAll();
     }
 
+    @Override
     public void add(SteeringWheel steeringWheel) {
         steeringWheelRepository.save(steeringWheel);
     }
 
+    @Override
     public void delete(long id) {
         steeringWheelRepository.deleteById(id);
     }
