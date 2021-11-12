@@ -11,11 +11,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "AUTOS")
+@Table(name = "AUTO")
 public class Car {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long carId;
     private String mnfName;
     private String modelName;
 

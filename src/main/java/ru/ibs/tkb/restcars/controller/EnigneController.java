@@ -29,7 +29,7 @@ public class EnigneController {
         engineService.add(engine);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable long id) {
         engineService.delete(id);
     }

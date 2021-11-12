@@ -28,7 +28,7 @@ public class SteeringWheelController {
         steeringWheelService.add(steeringWheel);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable long id) {
         steeringWheelService.delete(id);
     }

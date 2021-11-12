@@ -28,7 +28,7 @@ public class PistonsController {
         pistonsService.add(pistons);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping( "/delete/{id}")
     public void delete(@PathVariable long id){
         pistonsService.delete(id);
     }

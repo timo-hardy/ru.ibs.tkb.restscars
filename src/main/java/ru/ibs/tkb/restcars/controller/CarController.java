@@ -1,6 +1,5 @@
 package ru.ibs.tkb.restcars.controller;
 
-import net.bytebuddy.agent.builder.AgentBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.ibs.tkb.restcars.entity.Car;
@@ -28,8 +27,8 @@ public class CarController {
         carService.add(car);
     }
 
-    @DeleteMapping("/delete")
-    public void delete(@PathVariable long id) {
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
         carService.delete(id);
     }
 }

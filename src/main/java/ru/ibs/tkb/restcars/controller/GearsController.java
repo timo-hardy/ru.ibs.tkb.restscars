@@ -29,8 +29,8 @@ public class GearsController {
         gearsService.add(gears);
     }
 
-    @DeleteMapping("/delete")
-    public void delete(@PathVariable long id) {
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
         gearsService.delete(id);
     }
 }

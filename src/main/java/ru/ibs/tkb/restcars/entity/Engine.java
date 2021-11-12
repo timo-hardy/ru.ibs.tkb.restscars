@@ -7,15 +7,16 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-
+@Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "ENGINES")
 public class Engine {
     @Id
     @GeneratedValue
-    private Long id;
-    private String type;
+    private Long engineId;
+    private String engineType;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Gears> gears;
     @OneToMany(cascade = CascadeType.ALL)
