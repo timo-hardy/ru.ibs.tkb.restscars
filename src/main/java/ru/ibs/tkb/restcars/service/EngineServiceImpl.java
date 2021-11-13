@@ -3,6 +3,7 @@ package ru.ibs.tkb.restcars.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.Engine;
+import ru.ibs.tkb.restcars.exception.EngineNotFoundException;
 import ru.ibs.tkb.restcars.repository.EngineRepository;
 
 import java.util.List;
@@ -28,6 +29,11 @@ public class EngineServiceImpl implements EngineService {
 
     @Override
     public void delete(long id) {
-        engineRepository.deleteById(id);
+        try {
+            engineRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new EngineNotFoundException();
+        }
     }
 }
+

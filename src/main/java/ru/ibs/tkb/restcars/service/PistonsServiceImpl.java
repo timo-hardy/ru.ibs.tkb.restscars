@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.Gears;
 import ru.ibs.tkb.restcars.entity.Pistons;
+import ru.ibs.tkb.restcars.exception.PistonsNotFoundException;
 import ru.ibs.tkb.restcars.repository.PistonsRepository;
 
 import java.util.List;
@@ -29,6 +30,10 @@ public class PistonsServiceImpl implements PistonsService {
 
     @Override
     public void delete(long id) {
-        pistonsRepository.deleteById(id);
+        try {
+            pistonsRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new PistonsNotFoundException();
+        }
     }
 }

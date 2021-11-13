@@ -3,6 +3,7 @@ package ru.ibs.tkb.restcars.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.Manual;
+import ru.ibs.tkb.restcars.exception.ManualNotFoundException;
 import ru.ibs.tkb.restcars.repository.ManualRepository;
 
 import java.util.List;
@@ -28,7 +29,11 @@ public class ManualServiceImpl implements ru.ibs.tkb.restcars.service.ManualServ
 
     @Override
     public void delete(long id) {
-        manualRepository.deleteById(id);
+        try {
+            manualRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new ManualNotFoundException();
+        }
     }
 
 }

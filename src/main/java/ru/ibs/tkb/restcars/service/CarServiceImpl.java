@@ -3,10 +3,9 @@ package ru.ibs.tkb.restcars.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.Car;
+import ru.ibs.tkb.restcars.exception.CarNotFoundException;
 import ru.ibs.tkb.restcars.repository.CarRepository;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -24,11 +23,19 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void add(Car car) {
-        carRepository.save(car);
+        try {
+            carRepository.save(car);
+        } catch (Exception e) {
+            throw new CarNotFoundException();
+        }
     }
 
     @Override
     public void delete(long id) {
+        try {
         carRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new CarNotFoundException();
+        }
     }
 }

@@ -3,6 +3,7 @@ package ru.ibs.tkb.restcars.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.SteeringWheel;
+import ru.ibs.tkb.restcars.exception.SteeringWheelNotFoundException;
 import ru.ibs.tkb.restcars.repository.SteeringWheelRepository;
 
 import java.util.List;
@@ -28,6 +29,10 @@ public class SteeringWheelServiceImpl implements SteeringWheelService {
 
     @Override
     public void delete(long id) {
-        steeringWheelRepository.deleteById(id);
+        try {
+            steeringWheelRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new SteeringWheelNotFoundException();
+        }
     }
 }

@@ -21,11 +21,7 @@ public class CarController {
 
     @GetMapping("/read")
     public List<Car> getAll() {
-        try {
             return carService.findAll();
-        } catch (Exception e) {
-            throw new CarNotFoundException();
-        }
     }
 
     @RequestMapping("/create")
@@ -34,7 +30,7 @@ public class CarController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable Long id) throws CarNotFoundException {
+    public void delete(@PathVariable Long id) throws CarNotFoundException{
         carService.delete(id);
     }
 }
