@@ -1,6 +1,6 @@
 package ru.ibs.tkb.restcars.exception;
 
-public class EngineNotFoundException extends RuntimeException{
+public class EngineNotFoundException extends RuntimeException {
     public EngineNotFoundException() {
     }
 

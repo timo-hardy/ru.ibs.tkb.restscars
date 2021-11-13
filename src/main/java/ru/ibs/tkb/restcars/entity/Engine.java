@@ -17,8 +17,13 @@ public class Engine {
     @GeneratedValue
     private Long engineId;
     private String engineType;
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Gears> gears;
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Pistons> pistons;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Manual> manuals;
 }

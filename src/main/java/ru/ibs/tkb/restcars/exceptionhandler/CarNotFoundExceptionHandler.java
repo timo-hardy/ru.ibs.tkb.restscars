@@ -12,6 +12,6 @@ public class CarNotFoundExceptionHandler {
             Model model, CarNotFoundException e
     ) {
         model.addAttribute("message", e.getMessage());
-        return "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
+        return "car-not-found";
     }
 }
