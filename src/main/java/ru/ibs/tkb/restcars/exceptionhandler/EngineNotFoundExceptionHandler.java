@@ -7,12 +7,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import ru.ibs.tkb.restcars.exception.EngineNotFoundException;
+import ru.ibs.tkb.restcars.exception.CarNotFoundException;
 
 @ControllerAdvice
 public class EngineNotFoundExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(EngineNotFoundException.class)
+    @ExceptionHandler(CarNotFoundException.class)
     protected ResponseEntity<EngineTextException> handleThereIsNoSuchEngineException() {
         return new ResponseEntity<>(
                 new EngineTextException("There is no such engine"),

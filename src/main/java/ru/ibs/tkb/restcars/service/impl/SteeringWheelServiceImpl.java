@@ -1,10 +1,10 @@
-package ru.ibs.tkb.restcars.service;
+package ru.ibs.tkb.restcars.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.SteeringWheel;
-import ru.ibs.tkb.restcars.exception.SteeringWheelNotFoundException;
 import ru.ibs.tkb.restcars.repository.SteeringWheelRepository;
+import ru.ibs.tkb.restcars.service.SteeringWheelService;
 
 import java.util.List;
 

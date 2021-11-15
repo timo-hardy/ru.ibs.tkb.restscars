@@ -1,10 +1,12 @@
-package ru.ibs.tkb.restcars.service;
+package ru.ibs.tkb.restcars.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.Car;
 import ru.ibs.tkb.restcars.exception.CarNotFoundException;
 import ru.ibs.tkb.restcars.repository.CarRepository;
+import ru.ibs.tkb.restcars.service.CarService;
+
 import java.util.List;
 
 @Service

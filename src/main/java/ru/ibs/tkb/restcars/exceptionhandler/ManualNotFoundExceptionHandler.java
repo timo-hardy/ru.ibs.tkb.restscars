@@ -7,13 +7,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import ru.ibs.tkb.restcars.exception.EngineNotFoundException;
-import ru.ibs.tkb.restcars.exception.ManualNotFoundException;
+import ru.ibs.tkb.restcars.exception.CarNotFoundException;
 
 @ControllerAdvice
 public class ManualNotFoundExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(ManualNotFoundException.class)
+    @ExceptionHandler(CarNotFoundException.class)
     protected ResponseEntity<ManualTextException> handleThereIsNoSuchManualException() {
         return new ResponseEntity<>(
                 new ManualTextException("There is no such manual"),

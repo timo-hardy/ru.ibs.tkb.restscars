@@ -7,13 +7,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import ru.ibs.tkb.restcars.exception.EngineNotFoundException;
-import ru.ibs.tkb.restcars.exception.PistonsNotFoundException;
+import ru.ibs.tkb.restcars.exception.CarNotFoundException;
 
 @ControllerAdvice
 public class PistonsNotFoundExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(PistonsNotFoundException.class)
+    @ExceptionHandler(CarNotFoundException.class)
     protected ResponseEntity<PistonsTextException> handleThereIsNoSuchPostonsException() {
         return new ResponseEntity<>(
                 new PistonsTextException("There is no such pistons"),

@@ -7,13 +7,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import ru.ibs.tkb.restcars.exception.EngineNotFoundException;
-import ru.ibs.tkb.restcars.exception.SteeringWheelNotFoundException;
+import ru.ibs.tkb.restcars.exception.CarNotFoundException;
 
 @ControllerAdvice
 public class SteeringWheelNotFoundExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(SteeringWheelNotFoundException.class)
+    @ExceptionHandler(CarNotFoundException.class)
     protected ResponseEntity<SteeringWheelTextException> handleThereIsNoSuchEngineException() {
         return new ResponseEntity<>(
                 new SteeringWheelTextException("There is no such steering wheel"),

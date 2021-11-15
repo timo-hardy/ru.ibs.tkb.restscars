@@ -1,11 +1,10 @@
-package ru.ibs.tkb.restcars.service;
+package ru.ibs.tkb.restcars.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.ibs.tkb.restcars.entity.Gears;
 import ru.ibs.tkb.restcars.entity.Pistons;
-import ru.ibs.tkb.restcars.exception.PistonsNotFoundException;
 import ru.ibs.tkb.restcars.repository.PistonsRepository;
+import ru.ibs.tkb.restcars.service.PistonsService;
 
 import java.util.List;
 
