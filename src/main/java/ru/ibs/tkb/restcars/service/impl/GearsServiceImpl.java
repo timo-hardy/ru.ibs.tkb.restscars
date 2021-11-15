@@ -3,6 +3,7 @@ package ru.ibs.tkb.restcars.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ibs.tkb.restcars.entity.Gears;
+import ru.ibs.tkb.restcars.exception.CarNotFoundException;
 import ru.ibs.tkb.restcars.repository.GearsRepository;
 import ru.ibs.tkb.restcars.service.GearsService;
 
@@ -32,7 +33,7 @@ public class GearsServiceImpl implements GearsService {
         try {
             gearsRepository.deleteById(id);
         } catch (Exception e) {
-            throw new GearsNotFoundException();
+            throw new CarNotFoundException();
         }
     }
 }
